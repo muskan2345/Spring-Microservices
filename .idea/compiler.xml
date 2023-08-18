@@ -12,6 +12,9 @@
         <module name="demo.OrderService" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="demo.serviceRegistry" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
