@@ -76,9 +76,10 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public OrderResponse getOrder(long id) {
+        String url = "http://PRODUCT-SERVICE/product";
         logger.info("get Product");
         Order order = orderRepository.findById(id).orElseThrow(()->new OrderServiceCustomException("Order not found","ORDER_NOT_PLACED"));
-        ProductResponse productReponse =restTemplate.getForObject("http://PRODUCT-SERVICE/product/"+order.getProductId(), ProductResponse.class);
+        ProductResponse productReponse =restTemplate.getForObject(url +order.getProductId(), ProductResponse.class);
         OrderResponse.ProductDetails productDetails=OrderResponse.ProductDetails.builder()
                .name(productReponse.getName())
                .productId(productReponse.getProductId())

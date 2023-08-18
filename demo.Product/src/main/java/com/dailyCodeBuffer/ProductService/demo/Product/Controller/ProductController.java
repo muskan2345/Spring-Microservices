@@ -1,6 +1,7 @@
 package com.dailyCodeBuffer.ProductService.demo.Product.Controller;
 
 
+import com.dailyCodeBuffer.ProductService.demo.Product.Model.Product;
 import com.dailyCodeBuffer.ProductService.demo.Product.Model.ProductRequest;
 import com.dailyCodeBuffer.ProductService.demo.Product.Model.ProductResponse;
 import com.dailyCodeBuffer.ProductService.demo.Product.Service.ProductService;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 @RestController
 @RequestMapping("product")
@@ -42,6 +44,13 @@ public class ProductController
           productService.reduceQuantity(productId,quantity);
         return new ResponseEntity<>(HttpStatus.OK);
 
+    }
+
+    @GetMapping("/get")
+    public ResponseEntity<List<Product>> getProduct(){
+
+        List<Product> product = productService.getProduct();
+        return new ResponseEntity<>(product,HttpStatus.OK);
     }
 
 

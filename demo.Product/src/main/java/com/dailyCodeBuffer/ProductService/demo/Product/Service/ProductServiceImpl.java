@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -70,6 +71,15 @@ public class ProductServiceImpl implements ProductService
             prd.setQuantity(prd.getQuantity()-quantity);
             productRepository.save(prd);
         }
+
+    }
+
+    @Override
+    public List<Product> getProduct() {
+        List<Product> prod = productRepository.findAll();
+
+        return prod;
+
 
     }
 

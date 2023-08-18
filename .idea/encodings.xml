@@ -9,5 +9,7 @@
     <file url="file://$PROJECT_DIR$/demo.OrderService/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/demo.Product/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/demo.Product/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo.serviceRegistry/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo.serviceRegistry/src/main/resources" charset="UTF-8" />
   </component>
 </project>
