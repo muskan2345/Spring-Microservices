@@ -4,20 +4,15 @@ package com.example.demo.OrderService.Service;
 import com.example.demo.OrderService.Exception.OrderServiceCustomException;
 import com.example.demo.OrderService.Model.*;
 import com.example.demo.OrderService.Repository.OrderRepository;
-
 import com.example.demo.OrderService.externalClient.PaymentService;
 import com.example.demo.OrderService.externalClient.ProductService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ProblemDetail;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.time.Instant;
-
-import static org.springframework.beans.BeanUtils.copyProperties;
 
 
 @Service
@@ -76,7 +71,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public OrderResponse getOrder(long id) {
-        String url = "http://PRODUCT-SERVICE/product";
+        String url = "http://localhost:8080/product";
         logger.info("get Product");
         Order order = orderRepository.findById(id).orElseThrow(()->new OrderServiceCustomException("Order not found","ORDER_NOT_PLACED"));
         ProductResponse productReponse =restTemplate.getForObject(url +order.getProductId(), ProductResponse.class);
