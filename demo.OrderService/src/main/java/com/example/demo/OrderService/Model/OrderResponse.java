@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.Instant;
 
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -14,28 +15,35 @@ import java.time.Instant;
 public class OrderResponse
 {
 
-    private long orderId;
-
-    private Instant orderDate;
 
 
-    private String orderStatus;
+        private long orderId;
 
-    private long amount;
-    private ProductDetails productDetails;
+        private Instant orderDate;
 
-    @Data
-    @Builder
-    @NoArgsConstructor
-    @AllArgsConstructor
-    public static class ProductDetails
-    {
 
-        private long productId;
-        private String name;
-        private long price;
-        private long quantity;
-    }
+        private String orderStatus;
+
+        private long amount;
+        private ProductDetails productDetails;
+
+
+        @Data
+        @Builder
+        @NoArgsConstructor
+        @AllArgsConstructor
+        public static class ProductDetails
+        {
+
+            private long productId;
+            private String name;
+            private long price;
+            private long quantity;
+        }
+
+
+
+
 
 
 

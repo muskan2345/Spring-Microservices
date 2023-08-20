@@ -10,15 +10,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class PaymentRequest {
+public class ErrorResp
+{
+    private String errorMessage;
+    private String errorCode;
 
-
-    private long id;
-    private long orderId;
-    private long amount;
-
-    private String referenceNumber;
-
-    private PaymentMode paymentMode;
 
 }
